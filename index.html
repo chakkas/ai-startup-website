@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-880CYRPM5E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-880CYRPM5E');
+</script>
   <meta charset="UTF-8">
   <title>Metacognitive AI World</title>
   <link rel="stylesheet" href="style.css">
@@ -53,6 +62,16 @@
   <footer>
     <p>© 2026 Metacognitive AI World </p>
   </footer>
+  <script>
+  fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('location').innerText =
+        `You are visiting from ${data.city}, ${data.country_name}`;
+    });
+</script>
+
+<p id="location"></p>
 </body>
 </html>
 <script>
