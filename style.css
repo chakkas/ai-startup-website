@@ -7,7 +7,7 @@ body {
 
 .hero {
   background-color: #007BFF; /* Blue background */
-  color: white;              /* White text */
+  color: Blue;               /* Blue text */
   text-align: center;        /* Center the text */
   padding: 80px 20px;        /* Space around the content */
 }
