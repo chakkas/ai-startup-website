@@ -3,13 +3,14 @@ body {
   font-family: 'Merriweather', serif;
   background: #f9f9f9;
   color: #333;
+  padding-top: 70px; /* Push content below fixed navbar */
 }
 
 /* Hero Section */
 .hero {
   background: linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)),
               url('assets/images/hero-banner.jpg') center/cover no-repeat;
-  color: Blue;
+  color: white; /* White text stands out on blue overlay */
   text-align: center;
   padding: 120px 20px;
 }
@@ -34,20 +35,63 @@ body {
   background: #eee;
 }
 
-/* Navbar */
+/* Navbar (Sticky + Responsive) */
 .navbar {
   background: #111;
-  text-align: center;
-  padding: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
-.navbar a {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
   color: white;
-  margin: 0 20px;
+}
+.logo {
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+}
+.nav-links a {
+  color: white;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
-.navbar a:hover {
+.nav-links a:hover {
   color: #007BFF;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
 }
 
 /* Grid Cards */
@@ -75,6 +119,14 @@ body {
 }
 .card p {
   margin: 0 15px 20px;
+}
+
+/* Responsive Cards */
+@media (max-width: 1024px) {
+  .card { width: 45%; }
+}
+@media (max-width: 768px) {
+  .card { width: 100%; }
 }
 
 /* Footer */
