@@ -38,6 +38,7 @@ body {
 /* Navbar (Sticky + Responsive) */
 .navbar {
   background: #111;
+  color: brown;
   position: fixed;
   top: 0;
   width: 100%;
