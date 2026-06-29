@@ -6,11 +6,10 @@ body {
 }
 
 .hero {
-  background: linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)),
-              url('assets/images/hero-banner.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
+  background-color: #007BFF; /* Blue background */
+  color: white;              /* White text */
+  text-align: center;        /* Center the text */
+  padding: 80px 20px;        /* Space around the content */
 }
 
 .navbar {
