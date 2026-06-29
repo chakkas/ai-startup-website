@@ -93,6 +93,29 @@
 </script>
 
 <p id="location"></p>
+<script>
+  async function loadStockPrices() {
+    const ticker = document.getElementById("stock-ticker");
+    const symbols = ["NVDA", "MSFT", "GOOGL", "META"];
+    let items = "";
+
+    for (let symbol of symbols) {
+      try {
+        const response = await fetch(`https://stockprices.dev/api/stocks/${symbol}`);
+        const data = await response.json();
+        items += `<div class="ticker-item">${data.Ticker}: $${data.Price} (${data.ChangePercentage}%)</div>`;
+      } catch (err) {
+        items += `<div class="ticker-item">${symbol}: N/A</div>`;
+      }
+    }
+
+    ticker.innerHTML = items;
+  }
+
+  loadStockPrices();
+  setInterval(loadStockPrices, 60000);
+</script>
+
 </body>
 </html>
 <script>
