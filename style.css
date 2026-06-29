@@ -290,6 +290,8 @@ footer {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+
+
 .login-wrapper {
   max-width: 400px;
   margin: 80px auto;
