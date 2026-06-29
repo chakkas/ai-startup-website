@@ -257,4 +257,37 @@ footer {
   text-align: center;
   font-weight: bold;
 }
+/* News Ticker */
+.news-ticker {
+  background: #007BFF;
+  color: white;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker 20s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 50px;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
 
