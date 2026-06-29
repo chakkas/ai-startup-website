@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MetaCognitive AI</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <section class="login-wrapper">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="email" name="email" required placeholder=" ">
+        <label>Email</label>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" required placeholder=" ">
+        <label>Password</label>
+      </div>
+      <button type="submit" class="submit-btn">Login</button>
+      <p id="login-status"></p>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const status = document.getElementById('login-status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = form.email.value;
+      const password = form.password.value;
+
+      // Example: simple check (replace with real backend auth)
+      if (email === "demo@metacognitive.ai" && password === "password123") {
+        status.innerText = "Login successful! Redirecting...";
+        window.location.href = "../Dashboard/index.html"; // redirect after login
+      } else {
+        status.innerText = "Invalid credentials. Try again.";
+      }
+    });
+  </script>
+</body>
+</html>
