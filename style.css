@@ -1,41 +1,62 @@
 body {
-  font-family: 'Merriweather', serif;
   margin: 0;
-  background: #f4f4f4;
+  font-family: 'Merriweather', serif;
+  background: #f9f9f9;
   color: #333;
 }
 
+/* Hero Section */
 .hero {
-  background-color: #007BFF; /* Blue background */
-  color: Blue;               /* Blue text */
-  text-align: center;        /* Center the text */
-  padding: 80px 20px;        /* Space around the content */
+  background: linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7)),
+              url('assets/images/hero-banner.jpg') center/cover no-repeat;
+  color: Blue;
+  text-align: center;
+  padding: 120px 20px;
+}
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.2em;
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: white;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.cta-button:hover {
+  background: #eee;
 }
 
+/* Navbar */
 .navbar {
   background: #111;
   text-align: center;
   padding: 15px;
 }
-
 .navbar a {
   color: white;
   margin: 0 20px;
   text-decoration: none;
   font-weight: bold;
 }
-
 .navbar a:hover {
-  color: #ff6600;
+  color: #007BFF;
 }
 
+/* Grid Cards */
 .grid {
   display: flex;
   justify-content: space-around;
-  margin: 40px;
   flex-wrap: wrap;
+  margin: 40px;
 }
-
 .card {
   background: white;
   width: 30%;
@@ -43,17 +64,23 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 8px;
   overflow: hidden;
+  text-align: center;
 }
-
 .card img {
   width: 100%;
   height: auto;
 }
-
 .card h2 {
-  margin: 15px;
+  margin: 15px 0;
 }
-
 .card p {
   margin: 0 15px 20px;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
