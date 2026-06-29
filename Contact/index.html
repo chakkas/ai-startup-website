@@ -1,3 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Sales</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- Optional: Your navbar stays here -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">AI Startup</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="../Ai-Models/index.html">AI Models</a>
+        <a href="../Code-Base/index.html">Code Base</a>
+        <a href="../Contact/index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ⭐ Latest-style Contact Form -->
+  <section class="contact-wrapper">
+    <h1>Contact Sales</h1>
+
+    <form id="contactForm" action="https://formspree.io/f/mlgylvpl" method="POST">
+
+      <div class="form-group">
+        <input type="text" name="name" required placeholder=" ">
+        <label>Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" required placeholder=" ">
+        <label>Email</label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="company" required placeholder=" ">
+        <label>Company</label>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder=" ">
+        <label>Phone (optional)</label>
+      </div>
+
+      <div class="form-group">
+        <textarea name="message" rows="4" required placeholder=" "></textarea>
+        <label>Your Message</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+
+      <p id="form-status"></p>
+    </form>
+  </section>
+
+  <!-- ⭐ Crusoe-style Form Submission Script -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.innerText = "Thank you! Our team will contact you shortly.";
+        form.reset();
+      } else {
+        status.innerText = "Oops! Something went wrong.";
+      }
+    });
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
+<!-- 
 <section class="contact-wrapper">
   <h1>Contact Sales</h1>
 
@@ -32,4 +126,4 @@
 
     <p id="form-status"></p>
   </form>
-</section>
+</section> -->
