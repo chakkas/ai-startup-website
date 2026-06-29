@@ -37,7 +37,7 @@ body {
 
 /* Navbar (Sticky + Responsive) */
 .navbar {
-  background: rgba(17, 17, 17, 0.6); /* semi-transparent */
+  background: transparent;
   position: fixed;
   top: 0;
   width: 100%;
