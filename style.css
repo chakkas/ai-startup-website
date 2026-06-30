@@ -13,7 +13,7 @@ body {
    background: linear-gradient(to bottom, #f9f9f9, #e6f0ff); /* soft gradient */
    color: #333;
    padding-top: 70px; /* Push content below fixed navbar */
-   background-image: url('assets/home-bg.png'); /* subtle pattern */ 
+   background-image: url('assets/images/pattern-bg.png'); /* subtle pattern */ 
    background-repeat: no-repeat; 
   } 
 
