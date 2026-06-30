@@ -5,11 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Sales</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Two-column layout */
+    .contact-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 50px;
+      padding: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Left image */
+    .contact-banner {
+      flex: 1;
+    }
+    .contact-banner img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Right form */
+    .contact-form {
+      flex: 1;
+      font-family: Arial, sans-serif;
+    }
+    .contact-form h1 {
+      color: #007BFF;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .form-group label {
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      background: #fff;
+      font-size: 0.9em;
+      color: #555;
+      padding: 0 4px;
+    }
+    .submit-btn {
+      background-color: #28a745;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
-
 <body>
-
-  <!-- Optional: Your navbar stays here -->
+  <!-- ✅ Navbar -->
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">MetaCognitive AI</div>
@@ -23,79 +88,71 @@
     </div>
   </header>
 
-  <!-- ⭐ Latest-style Contact Form -->
-  <section class="contact-wrapper">
-    <h1>Contact Sales</h1>
+  <!-- ⭐ Crusoe-style two-column section -->
+  <section class="contact-section">
+    <!-- Left side image -->
+    <div class="contact-banner">
+      <img src="../assets/contact-banner.png" alt="Contact Sales Banner">
+    </div>
 
-    <form id="contactForm" action="https://formspree.io/f/mlgylvpl" method="POST">
-
-      <div class="form-group">
-        <input type="text" name="name" required placeholder=" ">
-        <label>Name</label>
-      </div>
-
-      <div class="form-group">
-        <input type="email" name="email" required placeholder=" ">
-        <label>Email</label>
-      </div>
-
-      <div class="form-group">
-        <input type="text" name="company" required placeholder=" ">
-        <label>Company</label>
-      </div>
-
-      <!-- Phone validation -->
-      <div class="form-group">
-        <input type="tel" name="phone" placeholder=" "
-               pattern="^\+?[0-9]{7,15}$"
-               title="Enter a valid phone number with 7–15 digits, optional +">
-        <label>Phone </label>
-      </div>
-
-      <!-- Country dropdown -->
-      <div class="form-group">
-        <select name="country" required>
-        <option value="" disabled selected>Select your country</option>
-        <option value="US">United States</option>
-        <option value="MX">Mexico</option>
-        <option value="IN">India</option>
-        <option value="UK">United Kingdom</option>
-        <option value="CAN">CANADA</option>
-        <option value="AUS">AUSTRALIA</option>
-        <option value="NZ">NEW ZEALAND</option>  
-      <!-- Add more countries as needed -->
-      </select>
-        <label>Country</label>
-      </div>
-
-
-      <div class="form-group">
-        <textarea name="message" rows="4" required placeholder=" "></textarea>
-        <label>Your Message</label>
-      </div>
-
-      <button type="submit" class="submit-btn">Submit</button>
-
-      <p id="form-status"></p>
-    </form>
+    <!-- Right side form -->
+    <div class="contact-form">
+      <h1>Contact Sales</h1>
+      <form id="contactForm" action="https://formspree.io/f/mlgylvpl" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" required>
+          <label>Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" required>
+          <label>Email</label>
+        </div>
+        <div class="form-group">
+          <input type="text" name="company" required>
+          <label>Company</label>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone"
+                 pattern="^\+?[0-9]{7,15}$"
+                 title="Enter a valid phone number with 7–15 digits, optional +">
+          <label>Phone</label>
+        </div>
+        <div class="form-group">
+          <select name="country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="US">United States</option>
+            <option value="MX">Mexico</option>
+            <option value="IN">India</option>
+            <option value="UK">United Kingdom</option>
+            <option value="CAN">Canada</option>
+            <option value="AUS">Australia</option>
+            <option value="NZ">New Zealand</option>
+          </select>
+          <label>Country</label>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="4" required></textarea>
+          <label>Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+        <p id="form-status"></p>
+      </form>
+    </div>
   </section>
 
-  <!-- ⭐ Crusoe-style Form Submission Script -->
+  <!-- ⭐ Form Submission Script -->
   <script>
     const form = document.getElementById('contactForm');
     const status = document.getElementById('form-status');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
       const data = new FormData(form);
-
       const response = await fetch(form.action, {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
       });
-
       if (response.ok) {
         status.innerText = "Thank you! Our team will contact you shortly.";
         form.reset();
@@ -108,6 +165,10 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
   </script>
-
 </body>
 </html>
+
+
+
+
+
