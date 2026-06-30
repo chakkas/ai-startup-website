@@ -289,6 +289,11 @@ footer {
   animation: ticker 23s linear infinite;
 }
 
+.ticker-move:hover {
+  animation-play-state: paused;
+}
+
+
 .ticker-item {
   display: inline-block;
   padding: 0 50px;
