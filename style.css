@@ -322,3 +322,50 @@ footer {
 .login-wrapper .form-group {
   margin-bottom: 20px;
 }
+.crusoe-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.crusoe-navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00C6FF;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.logo img {
+  height: 45px;
+}
